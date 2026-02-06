@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  db:
+    image: pgvector/pgvector:pg15
+    container_name: medicore-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: medicore
+      POSTGRES_PASSWORD: medicore_secret
+      POSTGRES_DB: medicore
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init-extensions.sql:/docker-entrypoint-initdb.d/init-extensions.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U medicore"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - medicore-network
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: medicore-api
+    restart: unless-stopped
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://medicore:medicore_secret@db:5432/medicore
+      - SECRET_KEY=your-super-secret-key-change-in-production
+      - ACCESS_TOKEN_EXPIRE_MINUTES=30
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app:/app/app
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - medicore-network
+
+volumes:
+  postgres_data:
+
+networks:
+  medicore-network:
+    driver: bridge
