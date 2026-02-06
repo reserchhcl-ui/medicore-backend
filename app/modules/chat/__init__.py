@@ -1,2 +1,4 @@
-# Chat Module - WebSockets Support
-# To be implemented
+from app.modules.chat.models import ChatMessage
+from app.modules.chat.router import router
+
+__all__ = ["ChatMessage", "router"]
