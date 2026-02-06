@@ -7,9 +7,11 @@ from app.core.config import settings
 from app.core.database import init_db
 from app.modules.auth.router import router as auth_router
 from app.modules.knowledge_base.router import router as kb_router
+from app.modules.onboarding.router import router as onboarding_router
 # Import models to register them with Base for init_db
 from app.modules.auth.models import User  # noqa: F401
 from app.modules.knowledge_base.models import SOP, SOPVersion, SOPReading  # noqa: F401
+from app.modules.onboarding.models import Playlist, PlaylistSOP  # noqa: F401
 
 
 @asynccontextmanager
@@ -45,6 +47,7 @@ def create_app() -> FastAPI:
     # Register routers
     app.include_router(auth_router)
     app.include_router(kb_router)
+    app.include_router(onboarding_router)
     
     @app.get("/", tags=["health"])
     async def health_check():
