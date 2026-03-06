@@ -17,4 +17,5 @@
 4.2 - Leia o arquivo model_instruction/Manual_PA_antigo.md para entender como funciona o sistema atual e os POPs de cada plano de saúde.
 4.3 - Vamos entender e transportar as informações para o arquivo model_instruction/especificações_dos_planos_de_saude.md
 4.4 - Vamos criar as tabelas e popular nosso banco de dados com os planos de saúde que serão utilizados no sistema, vide arquivo model_instruction/especificações_dos_planos_de_saude.md.
-4.5 - imagens para cada plano de saúde em medicore-backend\frontend\public\img
+4.5 - Vamos utilizar as imagens referentes a cada plano de saúde em veja o nome dos arquivos já estão separados medicore-backend\frontend\public\img
+4.6 - Ler o arquivo model_instruction/especificações_dos_planos_de_saude.md e entender as informações detalhadas sobre os o roteiro de criação dos POPs de cada plano de saúde e depois vamos criar os POPs de cada plano de saúde.

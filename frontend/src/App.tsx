@@ -8,6 +8,7 @@ import { ForgotPassword } from './modules/auth/ForgotPassword';
 import { ResetPassword } from './modules/auth/ResetPassword';
 import { HealthPlanList } from './modules/health_plans/HealthPlanList';
 import { HealthPlanDetail } from './modules/health_plans/HealthPlanDetail';
+import { SOPDetail } from './modules/knowledge_base/SOPDetail';
 import { useAuthStore } from './store/authStore';
 
 // Protected Route Wrapper
@@ -24,13 +25,6 @@ const Dashboard = () => (
   <Container>
     <Title order={2}>Dashboard</Title>
     <Text mt="md">Bem-vindo ao MediCore. Selecione uma opção no menu lateral.</Text>
-  </Container>
-);
-
-const KnowledgeBase = () => (
-  <Container>
-    <Title order={2}>POPs - Detalhes do Procedimento</Title>
-    <Text mt="md">Aqui você encontrará o conteúdo detalhado do Procedimento Operacional Padrão.</Text>
   </Container>
 );
 
@@ -67,7 +61,7 @@ function App() {
           <Route index element={<Dashboard />} />
           <Route path="health-plans" element={<HealthPlanList />} />
           <Route path="health-plans/:id" element={<HealthPlanDetail />} />
-          <Route path="sops/:id" element={<KnowledgeBase />} />
+          <Route path="sops/:id" element={<SOPDetail />} />
           <Route path="onboarding" element={<Onboarding />} />
           <Route path="chat" element={<Chat />} />
         </Route>

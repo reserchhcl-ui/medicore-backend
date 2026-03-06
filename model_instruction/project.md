@@ -128,7 +128,7 @@ medicore-backend/
     - Modelo `HealthPlan` (Nome, Logo, Ativo) vinculado ao `SOP`.
     - Migração unificada e compatível com SQLite (`current_timestamp`).
     - API: Listagem de convênios, detalhes e filtragem de POPs por convênio.
-    - Script de Seed: 8 convênios cadastrados com protocolos específicos.
+    - Script de Seed: 8 convênios cadastrados com protocolos técnicos detalhados (assinaturas, códigos de exame, regras de autorização) e logos mapeados (`frontend/public/img`).
 2. **Frontend:**
     - Tela de Listagem de Convênios (Grid de Cards com logos).
     - Tela de Detalhes do Convênio (Lista de POPs relacionados).
