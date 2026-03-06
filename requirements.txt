@@ -1,5 +1,6 @@
 fastapi
 uvicorn[standard]
+gunicorn
 sqlalchemy[asyncio]
 asyncpg
 aiosqlite
@@ -10,4 +11,7 @@ passlib[bcrypt]
 alembic
 python-multipart
 email-validator
+pytest
+pytest-asyncio
+httpx
 

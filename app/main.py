@@ -54,7 +54,7 @@ def create_app() -> FastAPI:
     app.include_router(onboarding_router)
     app.include_router(chat_router)
     
-    @app.get("/", tags=["health"])
+    @app.get("/health", tags=["health"])
     async def health_check():
         """Health check endpoint."""
         return {"status": "healthy", "app": settings.APP_NAME}

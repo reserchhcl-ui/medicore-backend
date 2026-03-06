@@ -138,12 +138,17 @@ medicore-backend/
 
 ### 🚀 Próximas Fases (Propostas)
 
-#### 🔄 Fase 5: Onboarding & Trilhas (A Iniciar)
-1. **Backend:** Criação do modelo `Playlist` e `PlaylistSOP`.
-2. **Lógica:** Implementar sequência lógica de leitura de POPs.
-3. **Frontend:** Dashboard de progresso para o colaborador.
+#### ✅ Fase 5: Infraestrutura e Preparação para Deploy (Concluída)
+1. **Dockerização:**
+    - Criado `Dockerfile` multi-stage para o Frontend (Vite + Nginx).
+    - Atualizado `Dockerfile` do Backend com `curl` e suporte a comandos de produção.
+    - `docker-compose.yml` agora inclui o frontend e healthchecks para os serviços.
+2. **Dependências:**
+    - `requirements.txt` atualizado com `gunicorn` e ferramentas de teste (`pytest`, `httpx`).
+3. **Monitoramento:**
+    - Implementado endpoint `/health` no backend para validação automática de status.
 
-#### 💬 Fase 6: Chat & Suporte (Real-time)
+#### 🔄 Fase 6: Onboarding & Trilhas (A Iniciar)
 1. **Backend:** WebSocket manager e modelo de mensagens.
 2. **Frontend:** Interface de chat flutuante ou página dedicada.
 
